@@ -3,7 +3,7 @@ from django.db import router, transaction
 
 def get_next_value(
         sequence_name='default', initial_value=1,
-        *, nowait=False, using=None):
+        nowait=False, using=None):
     """
     Return the next value for a given sequence.
 
