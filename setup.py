@@ -38,13 +38,14 @@ setuptools.setup(
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
     ],
+    include_package_data=True,
     packages=[
         'sequences',
         'sequences.migrations',
     ],
-    package_data={
-        'sequences': [
-            'locale/*/LC_MESSAGES/*',
-        ],
-    },
+    #package_data={
+    #    'sequences': [
+    #        'locale/*/LC_MESSAGES/*',
+    #    ],
+    #},
 )
