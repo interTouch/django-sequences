@@ -3,7 +3,7 @@ from django.db import router, transaction
 
 def get_next_value(
         sequence_name='default', initial_value=1,
-        nowait=False, using=None):
+        nowait=False, using=None, max_value=None):
     """
     Return the next value for a given sequence.
 
@@ -38,5 +38,7 @@ def get_next_value(
         )
         if not created:
             sequence.last += 1
+            if max_value and sequence.last > max_value:
+                sequence.last = 1
             sequence.save()
         return sequence.last
